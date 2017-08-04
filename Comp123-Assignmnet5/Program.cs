@@ -7,7 +7,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 3rd August,2017
  * Description : This is the BMI calculator 
- * Version : 1.0 Created the program class
+ * Version : 1.1 Created the draft user interface
  */ 
 namespace Comp123_Assignmnet5
 {
