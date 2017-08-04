@@ -11,7 +11,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 3rd August,2017
  * Description : This is the BMI calculator 
- * Version : 1.0 Created the BMI Calcualtor draft User interface 
+ * Version : 1.0 Set the enabled property to false 
  */
 namespace Comp123_Assignmnet5
 {
