@@ -104,6 +104,7 @@
             this.ImperialRadioButton.TabStop = true;
             this.ImperialRadioButton.Text = "Imperial";
             this.ImperialRadioButton.UseVisualStyleBackColor = true;
+            this.ImperialRadioButton.CheckedChanged += new System.EventHandler(this.ImperialRadioButton_CheckedChanged);
             // 
             // MetricRadioButton
             // 
@@ -125,6 +126,7 @@
             this.BMIButton.TabIndex = 1;
             this.BMIButton.Text = "Submit";
             this.BMIButton.UseVisualStyleBackColor = false;
+            this.BMIButton.Click += new System.EventHandler(this.BMIButton_Click);
             // 
             // BMITextBox
             // 
