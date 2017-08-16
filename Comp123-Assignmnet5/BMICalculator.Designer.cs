@@ -89,6 +89,7 @@
             this.MyHeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyHeightTextBox.TabIndex = 2;
             this.MyHeightTextBox.Enter += new System.EventHandler(this.MyHeightTextBox_Enter);
+            
             this.MyHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MyHeightTextBox_KeyPress);
             this.MyHeightTextBox.Leave += new System.EventHandler(this.MyHeightTextBox_Leave);
             // 
@@ -100,6 +101,7 @@
             this.MyWeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyWeightTextBox.TabIndex = 3;
             this.MyWeightTextBox.Enter += new System.EventHandler(this.MyWeightTextBox_Enter);
+            
             this.MyWeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MyWeightTextBox_KeyPress);
             this.MyWeightTextBox.Leave += new System.EventHandler(this.MyWeightTextBox_Leave);
             // 
@@ -151,7 +153,7 @@
             // textBox
             // 
             this.textBox.Enabled = false;
-            this.textBox.Location = new System.Drawing.Point(44, 336);
+            this.textBox.Location = new System.Drawing.Point(44, 337);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(216, 38);
             this.textBox.TabIndex = 3;

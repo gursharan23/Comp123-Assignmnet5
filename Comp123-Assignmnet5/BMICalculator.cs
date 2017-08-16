@@ -11,12 +11,12 @@ using System.Windows.Forms;
 /*Name : Gursharan Singh
  *Student Id : 300931676
  * Date : 10th August,2017
- * Description : This is the BMI calculator 
- * Version : 1.7 Added the Enter and Leave event
+ * Description : This is the BMI calculator for calculating body mass index
+ * Version : 1.8 Refactored the calculator
  */
 namespace Comp123_Assignmnet5
 {
-    
+
     public partial class BMICalculator : Form
     {
         //Private Instance Variables
@@ -64,7 +64,7 @@ namespace Comp123_Assignmnet5
             InitializeComponent();
         }
 
-       private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
+        private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton imperialButton = sender as RadioButton;
             if (imperialButton.Checked)
@@ -87,11 +87,11 @@ namespace Comp123_Assignmnet5
             this.Weight = _convert(MyHeightTextBox.Text);
             if (ImperialRadioButton.Checked)
             {
-                this.Bmi = Math.Round(((this.Weight * 703) / Math.Pow(this.Height,2)),1);
+                this.Bmi = Math.Round(((this.Weight * 703) / Math.Pow(this.Height, 2)), 1);
             }
-            else if(MetricRadioButton.Checked)
+            else if (MetricRadioButton.Checked)
             {
-                this.Bmi = Math.Round(((this.Weight) / (this.Height * this.Height)),1);
+                this.Bmi = Math.Round(((this.Weight) / (this.Height * this.Height)), 1);
             }
             textBox.Text = Bmi.ToString();
             _scale();
@@ -102,18 +102,22 @@ namespace Comp123_Assignmnet5
             if (this.Bmi <= 18.5)
             {
                 BMITextBox.Text += "Underweight";
+                BMITextBox.BackColor = Color.Red;
             }
             else if (this.Bmi > 18.5 && this.Bmi <= 24.9)
             {
                 BMITextBox.Text += "Normal";
+                BMITextBox.BackColor = Color.Green;
             }
             else if (this.Bmi >= 25 && this.Bmi <= 29.9)
             {
                 BMITextBox.Text += "Overweight";
+                BMITextBox.BackColor = Color.Orange;
             }
             else
             {
                 BMITextBox.Text += "Obese";
+                BMITextBox.BackColor = Color.OrangeRed;
             }
         }
 
@@ -156,7 +160,7 @@ namespace Comp123_Assignmnet5
         /// <param name="e"></param>
         private void MyHeightTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&(e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -193,6 +197,7 @@ namespace Comp123_Assignmnet5
             MyWeightTextBox.Text = "";
             textBox.Text = "";
             BMITextBox.Text = "";
+            BMITextBox.BackColor = Color.White;
         }
 
         /// <summary>
@@ -233,5 +238,7 @@ namespace Comp123_Assignmnet5
                 return;
             }
         }
+
+   
     }
 }
