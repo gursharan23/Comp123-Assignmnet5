@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 /*Name : Gursharan Singh
  *Student Id : 300931676
- * Date : 3rd August,2017
+ * Date : 10th August,2017
  * Description : This is the BMI calculator 
- * Version : 1.3 Added the event handler for closing the form
+ * Version : 1.5 Added the keypress event that validates the input
  */
 namespace Comp123_Assignmnet5
 {
@@ -144,7 +144,44 @@ namespace Comp123_Assignmnet5
         /// <param name="e"></param>
         private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Application.Exit();
+        }
 
+        /// <summary>
+        /// This is refrenced from stacxkoverflow
+        /// It Handle the appropriate keyboard events to prevent anything
+        /// but numeric input. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyHeightTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+     (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void MyWeightTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+     (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

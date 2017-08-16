@@ -87,6 +87,7 @@
             this.MyHeightTextBox.Name = "MyHeightTextBox";
             this.MyHeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyHeightTextBox.TabIndex = 2;
+            this.MyHeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MyHeightTextBox_KeyPress);
             // 
             // MyWeightTextBox
             // 
@@ -95,6 +96,7 @@
             this.MyWeightTextBox.Name = "MyWeightTextBox";
             this.MyWeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyWeightTextBox.TabIndex = 3;
+            this.MyWeightTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MyWeightTextBox_KeyPress);
             // 
             // ImperialRadioButton
             // 

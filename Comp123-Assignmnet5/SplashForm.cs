@@ -38,8 +38,8 @@ namespace Comp123_Assignmnet5
         /// <param name="e"></param>
         private void SplashTimer_Tick(object sender, EventArgs e)
         {
-            BMICalculator bmiCalculator = new BMICalculator();
-            bmiCalculator.Show();
+            
+            this.BMICalculatorForm.Show();
             this.Hide();
             SplashTimer.Enabled = false;
         }
