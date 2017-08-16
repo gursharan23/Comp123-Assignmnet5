@@ -12,7 +12,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 10th August,2017
  * Description : This is the BMI calculator 
- * Version : 1.6 Added the reset button
+ * Version : 1.7 Added the Enter and Leave event
  */
 namespace Comp123_Assignmnet5
 {
@@ -193,6 +193,45 @@ namespace Comp123_Assignmnet5
             MyWeightTextBox.Text = "";
             textBox.Text = "";
             BMITextBox.Text = "";
+        }
+
+        /// <summary>
+        /// This method acts as a placeholder 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MyHeightTextBox_Enter(object sender, EventArgs e)
+        {
+            MyHeightTextBox.Text = "";
+        }
+
+        private void MyHeightTextBox_Leave(object sender, EventArgs e)
+        {
+            if (MyHeightTextBox.Text == "")
+            {
+                MyHeightTextBox.Text = "Inches";
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void MyWeightTextBox_Enter(object sender, EventArgs e)
+        {
+            MyWeightTextBox.Text = "";
+        }
+
+        private void MyWeightTextBox_Leave(object sender, EventArgs e)
+        {
+            if (MyWeightTextBox.Text == "")
+            {
+                MyWeightTextBox.Text = "Pounds";
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
