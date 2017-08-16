@@ -12,7 +12,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 10th August,2017
  * Description : This is the BMI calculator 
- * Version : 1.5 Added the keypress event that validates the input
+ * Version : 1.6 Added the reset button
  */
 namespace Comp123_Assignmnet5
 {
@@ -156,8 +156,7 @@ namespace Comp123_Assignmnet5
         /// <param name="e"></param>
         private void MyHeightTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-     (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&(e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -171,8 +170,7 @@ namespace Comp123_Assignmnet5
 
         private void MyWeightTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-     (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -182,6 +180,19 @@ namespace Comp123_Assignmnet5
             {
                 e.Handled = true;
             }
+        }
+
+        /// <summary>
+        /// This is the reset button method that resets the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            MyWeightTextBox.Text = "";
+            MyWeightTextBox.Text = "";
+            textBox.Text = "";
+            BMITextBox.Text = "";
         }
     }
 }

@@ -38,6 +38,7 @@
             this.BMIButton = new System.Windows.Forms.Button();
             this.BMITextBox = new System.Windows.Forms.TextBox();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.ResetButton = new System.Windows.Forms.Button();
             this.BMITableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,9 +125,10 @@
             // BMIButton
             // 
             this.BMIButton.BackColor = System.Drawing.Color.White;
-            this.BMIButton.Location = new System.Drawing.Point(82, 395);
+            this.BMIButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BMIButton.Location = new System.Drawing.Point(44, 395);
             this.BMIButton.Name = "BMIButton";
-            this.BMIButton.Size = new System.Drawing.Size(120, 35);
+            this.BMIButton.Size = new System.Drawing.Size(88, 35);
             this.BMIButton.TabIndex = 1;
             this.BMIButton.Text = "Submit";
             this.BMIButton.UseVisualStyleBackColor = false;
@@ -136,10 +138,10 @@
             // 
             this.BMITextBox.BackColor = System.Drawing.Color.Snow;
             this.BMITextBox.Enabled = false;
-            this.BMITextBox.Location = new System.Drawing.Point(1, 39);
+            this.BMITextBox.Location = new System.Drawing.Point(1, 78);
             this.BMITextBox.Multiline = true;
             this.BMITextBox.Name = "BMITextBox";
-            this.BMITextBox.Size = new System.Drawing.Size(300, 110);
+            this.BMITextBox.Size = new System.Drawing.Size(300, 77);
             this.BMITextBox.TabIndex = 2;
             // 
             // textBox
@@ -150,12 +152,24 @@
             this.textBox.Size = new System.Drawing.Size(216, 38);
             this.textBox.TabIndex = 3;
             // 
+            // ResetButton
+            // 
+            this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetButton.Location = new System.Drawing.Point(176, 395);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(84, 35);
+            this.ResetButton.TabIndex = 4;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
             // BMICalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(304, 442);
+            this.Controls.Add(this.ResetButton);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.BMITextBox);
             this.Controls.Add(this.BMIButton);
@@ -188,6 +202,7 @@
         private System.Windows.Forms.Button BMIButton;
         private System.Windows.Forms.TextBox BMITextBox;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button ResetButton;
     }
 }
 
