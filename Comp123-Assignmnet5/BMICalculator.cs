@@ -12,7 +12,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 10th August,2017
  * Description : This is the BMI calculator for calculating body mass index
- * Version : 1.8 Refactored the calculator
+ * Version : 1.8 Refactored the BMI calculator class
  */
 namespace Comp123_Assignmnet5
 {
@@ -207,35 +207,68 @@ namespace Comp123_Assignmnet5
         /// <param name="e"></param>
         private void MyHeightTextBox_Enter(object sender, EventArgs e)
         {
-            MyHeightTextBox.Text = "";
+            
+            {
+                MyHeightTextBox.Text = "";
+            }
         }
 
         private void MyHeightTextBox_Leave(object sender, EventArgs e)
         {
-            if (MyHeightTextBox.Text == "")
+            if (ImperialRadioButton.Checked)
             {
-                MyHeightTextBox.Text = "Inches";
+                if (MyHeightTextBox.Text == "")
+                {
+                    MyHeightTextBox.Text = "Inches";
+                }
+                else
+                {
+                    return;
+                }
             }
-            else
+            else if (MetricRadioButton.Checked)
             {
-                return;
+                if (MyHeightTextBox.Text == "")
+                {
+                    MyHeightTextBox.Text = "Meters";
+                }
+                else
+                {
+                    return;
+                }
             }
         }
 
         private void MyWeightTextBox_Enter(object sender, EventArgs e)
         {
-            MyWeightTextBox.Text = "";
+           
+             MyWeightTextBox.Text = "";
+            
         }
 
         private void MyWeightTextBox_Leave(object sender, EventArgs e)
         {
-            if (MyWeightTextBox.Text == "")
+            if (ImperialRadioButton.Checked)
             {
-                MyWeightTextBox.Text = "Pounds";
+                if (MyWeightTextBox.Text == "")
+                {
+                    MyWeightTextBox.Text = "Pounds";
+                }
+                else
+                {
+                    return;
+                }
             }
-            else
+            else if(MetricRadioButton.Checked)
             {
-                return;
+                if (MyWeightTextBox.Text == "")
+                {
+                    MyWeightTextBox.Text = "Kilograms";
+                }
+                else
+                {
+                    return;
+                }
             }
         }
 
