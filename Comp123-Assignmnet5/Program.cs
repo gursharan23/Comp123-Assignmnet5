@@ -11,17 +11,19 @@ using System.Windows.Forms;
  */ 
 namespace Comp123_Assignmnet5
 {
-    static class Program
+    public static class Program
     {
+        public static BMICalculator bmiCalculator;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BMICalculator());
+            bmiCalculator = new BMICalculator();
+            Application.Run(new SplashForm());
         }
     }
 }

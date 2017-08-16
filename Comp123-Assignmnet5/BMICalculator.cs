@@ -12,7 +12,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 3rd August,2017
  * Description : This is the BMI calculator 
- * Version : 1.2 Added the private _scale method
+ * Version : 1.3 Added the event handler for closing the form
  */
 namespace Comp123_Assignmnet5
 {
@@ -87,11 +87,11 @@ namespace Comp123_Assignmnet5
             this.Weight = _convert(MyHeightTextBox.Text);
             if (ImperialRadioButton.Checked)
             {
-                this.Bmi = Math.Floor((this.Weight * 703) / (this.Height * this.Height));
+                this.Bmi = Math.Round(((this.Weight * 703) / Math.Pow(this.Height,2)),1);
             }
             else if(MetricRadioButton.Checked)
             {
-                this.Bmi = Math.Floor((this.Weight) / (this.Height * this.Height));
+                this.Bmi = Math.Round(((this.Weight) / (this.Height * this.Height)),1);
             }
             textBox.Text = Bmi.ToString();
             _scale();
@@ -135,6 +135,15 @@ namespace Comp123_Assignmnet5
                 Debug.WriteLine(exception.Message);
             }
             return 0;
+
+        }
+        /// <summary>
+        /// This is the event handler for closing the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
 
         }
     }
