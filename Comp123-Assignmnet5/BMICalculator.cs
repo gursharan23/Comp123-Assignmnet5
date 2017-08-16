@@ -12,7 +12,7 @@ using System.Windows.Forms;
  *Student Id : 300931676
  * Date : 3rd August,2017
  * Description : This is the BMI calculator 
- * Version : 1.1 Added the private _convert method
+ * Version : 1.2 Added the private _scale method
  */
 namespace Comp123_Assignmnet5
 {
@@ -20,12 +20,12 @@ namespace Comp123_Assignmnet5
     public partial class BMICalculator : Form
     {
         //Private Instance Variables
-        private decimal _height;
-        private decimal _weight;
-        private decimal _bmi;
+        private double _height;
+        private double _weight;
+        private double _bmi;
         //Public Properties
 
-        public decimal Height
+        public double Height
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Comp123_Assignmnet5
                 this._height = value;
             }
         }
-        public decimal Weight
+        public double Weight
         {
             get
             {
@@ -48,7 +48,7 @@ namespace Comp123_Assignmnet5
             }
         }
 
-        public decimal Bmi
+        public double Bmi
         {
             get
             {
@@ -87,7 +87,33 @@ namespace Comp123_Assignmnet5
             this.Weight = _convert(MyHeightTextBox.Text);
             if (ImperialRadioButton.Checked)
             {
-                this.Bmi=
+                this.Bmi = Math.Floor((this.Weight * 703) / (this.Height * this.Height));
+            }
+            else if(MetricRadioButton.Checked)
+            {
+                this.Bmi = Math.Floor((this.Weight) / (this.Height * this.Height));
+            }
+            textBox.Text = Bmi.ToString();
+            _scale();
+        }
+        private void _scale()
+        {
+            BMITextBox.Text = "You are : ";
+            if (this.Bmi <= 18.5)
+            {
+                BMITextBox.Text += "Underweight";
+            }
+            else if (this.Bmi > 18.5 && this.Bmi <= 24.9)
+            {
+                BMITextBox.Text += "Normal";
+            }
+            else if (this.Bmi >= 25 && this.Bmi <= 29.9)
+            {
+                BMITextBox.Text += "Overweight";
+            }
+            else
+            {
+                BMITextBox.Text += "Obese";
             }
         }
 
@@ -96,11 +122,11 @@ namespace Comp123_Assignmnet5
         /// </summary>
         /// <param name="inputText"></param>
         /// <returns></returns>
-        private decimal _convert(string inputText)
+        private double _convert(string inputText)
         {
             try
             {
-                return Convert.ToDecimal(inputText);
+                return Convert.ToDouble(inputText);
             }
             catch (Exception exception)
             {

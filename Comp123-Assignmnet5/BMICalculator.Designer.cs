@@ -82,16 +82,18 @@
             // 
             // MyHeightTextBox
             // 
+            this.MyHeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MyHeightTextBox.Location = new System.Drawing.Point(153, 53);
             this.MyHeightTextBox.Name = "MyHeightTextBox";
-            this.MyHeightTextBox.Size = new System.Drawing.Size(144, 38);
+            this.MyHeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyHeightTextBox.TabIndex = 2;
             // 
             // MyWeightTextBox
             // 
+            this.MyWeightTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MyWeightTextBox.Location = new System.Drawing.Point(153, 103);
             this.MyWeightTextBox.Name = "MyWeightTextBox";
-            this.MyWeightTextBox.Size = new System.Drawing.Size(144, 38);
+            this.MyWeightTextBox.Size = new System.Drawing.Size(144, 26);
             this.MyWeightTextBox.TabIndex = 3;
             // 
             // ImperialRadioButton
